@@ -1,0 +1,23 @@
+﻿@model Sube2.HelloMvc.Models.Ogrenci
+
+@{
+    ViewBag.Title = "Aldığı Dersler";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Aldığı Dersler</h2>
+
+<div>
+    <h4>Öğrenci: @Model.Ad</h4>
+    <hr />
+    <ul class="list-group">
+        @foreach (var course in Model.Dersler)
+        {
+            <li class="list-group-item">@course.Dersad</li>
+        }
+    </ul>
+</div>
+
+<div>
+    @Html.ActionLink("Geri", "Index")
+</div>
